@@ -6,5 +6,5 @@ This project API was provided and inspired by [Pexels](https://www.pexels.com/).
 # Dependencies
 
 Build with 
-- [Pexels API] (https://www.pexels.com/api/documentation/)
+- [Pexels API](https://www.pexels.com/api/documentation/)
 - Material UI
