@@ -4,10 +4,10 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import makeStyles from './style.js'
 
-import Navbar from '../components/Navbar/Navbar'
-import CardPhotos from '../components/CardPhotos/CardPhotos'
+import Navbar from '../Components/Navbar/Navbar'
+import CardPhotos from '../Components/CardPhotos/CardPhotos'
 
-const AUTHORIZATION = process.env.REACT_APP_AUTHORIZATION;
+import getData from '../API/index.js'
 
 function App() {
   const classes = makeStyles();
@@ -17,41 +17,19 @@ function App() {
   const [parameter, setParameter] = useState('') // to compare
 
 
-  useEffect(() => {
-    getData();
+  useEffect(async() => {
+    const result = await getData(query);
+    setImages(result)
   }, [parameter])
-  
-  const getData = async (e) => {
-    const url = `https://api.pexels.com/v1/search?query=${query}`
-
-    try {
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          Authorization : AUTHORIZATION,
-          'Content-Type' : 'application/json;charset=UTF-8'
-        }
-      })
-      
-      const { photos } = await response.json()
-      setImages(photos)
-
-    } catch(error){
-      alert(error)
-    }
-  }
 
   // for submit/search
   const handleSubmit = (e) => {
     e.preventDefault()
-    
     setParameter(query)    
   }
   
   // for onChange Input
-  const handleOnChange = (e) => {
-    setQuery(e.target.value)
-  }
+  const handleOnChange = (e) => setQuery(e.target.value)
 
   return (
     <div>

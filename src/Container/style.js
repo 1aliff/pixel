@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import SearchBackground from '../assets/search-bg.jpg'
+import SearchBackground from '../Assets/search-bg.jpg'
 
 export default makeStyles((theme) => ({
     app : {
