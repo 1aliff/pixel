@@ -3,7 +3,7 @@ import { Grid, Card, CardMedia, CardActionArea, CardContent, Typography } from '
 
 import makeStyles from './style'
 
-const CardPhotos = ({ image, key }) => {
+const CardPhotos = ({ image }) => {
 
     // const { photographer } = {image}
 

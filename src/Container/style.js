@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import SearchBackground from '../Assets/search-bg.jpg'
+// import SearchBackground from '../Assets/search-bg.jpg'
 
 export default makeStyles((theme) => ({
     app : {
@@ -9,11 +9,5 @@ export default makeStyles((theme) => ({
       '& > *': {
         margin: theme.spacing(1),
       },
-    },
-    gridWrapper: {
-      padding: 15
-    },
-    grid: {
-      flexGrow: 1,
     },
   }));
