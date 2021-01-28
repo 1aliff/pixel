@@ -13,21 +13,25 @@ function App() {
   const [parameter, setParameter] = useState('') // for searchBar
 
   useEffect(() => {
-    const fetchData = async() => {
-      const result = await getData(query);
-      setImages(result)
-    }
     fetchData()
   }, [parameter])
+  
+  const fetchData = async() => {
+    const result = await getData(query);
+    setImages(result)
+  }
 
   // for submit/search
   const handleSubmit = (e) => {
     e.preventDefault()
     setParameter(query)    
   }
-  
-  // for onChange Input
-  const handleOnChange = (e) => setQuery(e.target.value)
+
+  const handleChips = (value) => {
+    setParameter(value);
+  }
+
+  const handleOnChange = (e) => setQuery(e.target.value)   // for onChange Input
 
   return (
     <div>
@@ -35,6 +39,7 @@ function App() {
       <SearchBar 
         onSubmit={handleSubmit}
         onChange={handleOnChange}
+        // handleChips={handleChips}
       />
       <PhotoGrid 
         images={images}

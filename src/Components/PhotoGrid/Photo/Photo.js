@@ -1,5 +1,5 @@
 import React, { useState }from 'react'
-import { Backdrop, Modal, Fade, Card, CardMedia, CardActions, Button, CardActionArea, CardContent, Typography } from '@material-ui/core'
+import { Paper, Backdrop, Modal, Fade, Card, CardMedia, CardActions, Button, CardActionArea, CardContent, Typography } from '@material-ui/core'
 import makeStyles from './style'
 import GetAppIcon from '@material-ui/icons/GetApp';
 // import fileDownload from 'js-file-download'
@@ -9,6 +9,7 @@ import FileSaver, { saveAs } from 'file-saver';
 const CardPhotos = ({ image }) => {
     const classes = makeStyles()
     const [open, setOpen]= useState(false);
+    const [showInfo, setShowInfo] = useState(true);
 
     const urlOriginalSize = image.src.original;
     const urlLargeSize = image.src.large;
@@ -37,17 +38,13 @@ const CardPhotos = ({ image }) => {
                         image={urlLargeSize}
                         title={`Photo By ${photographer}`}
                     />
-                    <CardContent>
+                    {/* <p>Photo By: {photographer}</p> */}
+                    {/* <CardContent>
                         <Typography gutterBottom variant="h7" align="center">
                             Photo By : {photographer}
                         </Typography>
-                    </CardContent>
+                    </CardContent> */}
                 </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary">
-                    Share
-                    </Button>
-                </CardActions>
             </Card>
 
             <Modal
@@ -64,15 +61,14 @@ const CardPhotos = ({ image }) => {
             >
                 <Fade in={open}>
                     <div className={classes.paper}>
-                        <div className={classes.action}>
-                            <Typography variant="h5" className={classes.photographer}>By: {photographer}</Typography>
-                            <Button variant="contained" className={classes.button} onClick={() => onDownload(urlOriginalSize, 'image.jpg')}>Download Full Size<GetAppIcon/></Button>
+                        <div className={classes.actionWrapper}>
+                            <Typography variant="h5" className={classes.photographer} color="textSecondary" gutterBottom>By: {photographer}</Typography>
+                            <Button variant="contained" className={classes.button} onClick={() => onDownload(urlOriginalSize, 'image.jpg')}>Free Download<GetAppIcon/></Button>
                         </div>
-                        <br />
                         <img
-                            alt="that wanaka tree"
+                            className={classes.image}
+                            alt={`Photo By: ${photographer}`}
                             src={urlLargeSize}
-                            height="750px"
                         />
                         <br />
                     </div>

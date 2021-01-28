@@ -8,12 +8,9 @@ const Navbar = () => {
     return (
         <>
             <AppBar position="static">
-                <Toolbar>
-                <Typography variant="h6" className={classes.title}>
-                    Pixels 
-                    {/* Maybe i can add logo here  */}
-                </Typography>
-                <Button color="inherit">Saved Photos</Button>
+                <Toolbar style={{ backgroundColor: 'white' }}>
+                <Typography variant="h6" className={classes.title}> Pixels </Typography>
+                {/* <Button color="inherit">Saved Photos</Button> */}
                 </Toolbar>
             </AppBar>
         </>

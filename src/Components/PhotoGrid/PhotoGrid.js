@@ -9,14 +9,15 @@ const PhotoGrid = ({ images, parameter }) => {
     const classes = makeStyles();
 
     return (
-        <div className={classes.gridWrapper}>
-            <Typography variant="h4" className={classes.gridWrapper}> Get stock photos. </Typography>
+        <div>
+            <Typography variant="h5" color="textSecondary" className={classes.gridTypo} gutterBottom> Get stock photos. </Typography>
             { 
                 parameter !== ''
-                ? <Typography variant="h7" className={classes.gridWrapper}> Showing result of '{parameter}' </Typography>
+                ? <Typography variant="h8" className={classes.gridTypo} gutterBottom> Displaying result of '{parameter}' </Typography>
                 : ''
             }
             <Grid
+                // className={classes.gridWrapper}
                 container
                 direction="row"
                 justify="center"

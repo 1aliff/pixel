@@ -12,7 +12,19 @@ export default makeStyles(theme => ({
     media: {
       width: 320,
       height: 550,
+      '&:hover': {
+        // visibility: 'visible',
+        transition: 'transform 1s ease',
+        opacity: '5',
+        background: '#fee',
+        transform: 'scale(1.1)'
+     },
     },
+    // hoverable: {
+    //   '&:hover' : {
+    //     visibility: 'visible'
+    //   }
+    // },
     modal: {
       display: 'flex',
       alignItems: 'center',
@@ -21,27 +33,42 @@ export default makeStyles(theme => ({
       height: 'auto'
     },
     paper: {
-      // height: '900px',
-      // width: '500px',
-        maxWidth: '100%',
-        maxHeight: '900px',
-        outline: 'none',
-        backgroundColor:'#fff',
-        border: '0px solid #EEE',
-        borderRadius: '6px',
-        boxShadow: theme.shadows[6],
-        padding: '25px',
-        marginBottom: '1.15rem',
-        marginTop: '2.3rem',
+      height: 'auto',
+      width: '70%',
+      outline: 'none',
+      backgroundColor:'#fff',
+      border: '0px solid #EEE',
+      borderRadius: '6px',
+      boxShadow: theme.shadows[6],
+      padding: '20px',
+      marginBottom: '1.15rem',
+      marginTop: '2.3rem',
+    },
+    actionWrapper: {
+      display: 'inline-block',
+      width: '100%',
     },
     photographer : {
-      float : 'left'
+      float : 'left',
+      fontSize: '13'
     },
     button: {
       backgroundColor: '#14BA8B',
+      color : '#fff', 
       float: 'right',
-      margin: '10px',
     },
-    // action: {
-    // }
+    imageWrapper: {
+      display: 'flex',
+      alignItem: 'center',
+      justifyContent: 'center',
+      margin: '20px',
+    },
+    image: {
+      maxWidth: '100%',
+      maxHeight: '100%',
+      display: 'block',
+      paddingTop: '10px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
   }));

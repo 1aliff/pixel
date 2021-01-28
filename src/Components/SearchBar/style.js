@@ -21,5 +21,14 @@ export default makeStyles((theme) => ({
       paddingRight: '20px',
       width: '100%',
       height: '60px',
+    },
+    headerTypo: {
+      margin: '25px'
+    },
+    chips: {
+      // padding: '5px',
+      margin: '1px',
+      backgroundColor: '#aca8a8',
+      color: '#fff',
     }
-  }));
+  }))
