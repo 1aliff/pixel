@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Grid, Input, InputAdornment, Typography, FormControl, InputLabel, FilledInput} from '@material-ui/core'
-import SearchIcon from '@material-ui/icons/Search';
-
+import { Grid, Typography } from '@material-ui/core'
 import makeStyles from './style.js'
 
-import Navbar from '../Components/Navbar/Navbar'
+import NavBar from '../Components/Navbar/Navbar'
 import CardPhotos from '../Components/CardPhotos/CardPhotos'
+import SearchBar from '../Components/SearchBar/SearchBar'
 
 import getData from '../API/index.js'
 
@@ -33,23 +32,11 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-      <div className={classes.searchBar}>
-        <form autoComplete="off" onSubmit={handleSubmit}>
-            <Input
-              className={classes.inputSearch}
-              disableUnderline={true}
-              placeholder="Search for free photos and videos"
-              id="input-with-icon-adornment"
-              onChange={handleOnChange}
-              endAdornment={
-                <InputAdornment position="end">
-                  <SearchIcon onClick={handleSubmit} />
-                </InputAdornment>
-              }
-            />
-          </form>
-      </div>
+      <NavBar />
+      <SearchBar 
+        onSubmit={handleSubmit}
+        onChange={handleOnChange}
+      />
       <div className={classes.gridWrapper}>
         <Typography variant="h4" className={classes.gridWrapper}> Get stock photos. </Typography>
         { parameter !== '' ?
