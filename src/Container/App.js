@@ -12,13 +12,14 @@ const AUTHORIZATION = process.env.REACT_APP_AUTHORIZATION;
 function App() {
   const classes = makeStyles();
 
-  const [images, setImages] = useState([]) // for data images
-  const [query, setQuery] = useState('people') // initial query
+  const [images, setImages] = useState([]) // to get images data
+  const [query, setQuery] = useState('people') // initial query to API
+  const [parameter, setParameter] = useState('') // to compare
 
 
   useEffect(() => {
     getData();
-  }, [])
+  }, [parameter])
   
   const getData = async (e) => {
     const url = `https://api.pexels.com/v1/search?query=${query}`
@@ -40,18 +41,18 @@ function App() {
     }
   }
 
+  // for submit/search
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    // setQuery(e.target.value)
-
-  }
-
-  const handleSearch = (e) => {
-    setQuery(e.target.value)
-    console.log('whats being queried: ', query)
+    
+    setParameter(query)    
   }
   
+  // for onChange Input
+  const handleOnChange = (e) => {
+    setQuery(e.target.value)
+  }
+
   return (
     <div>
       <Navbar />
@@ -60,19 +61,23 @@ function App() {
             <Input
               className={classes.inputSearch}
               disableUnderline={true}
-              placeholder="Search images.."
+              placeholder="Search for free photos and videos"
               id="input-with-icon-adornment"
-              onChange={handleSearch}
+              onChange={handleOnChange}
               endAdornment={
                 <InputAdornment position="end">
-                  <SearchIcon/>
+                  <SearchIcon onClick={handleSubmit} />
                 </InputAdornment>
               }
             />
           </form>
       </div>
       <div className={classes.gridWrapper}>
-        <Typography variant="h5"> Get stock photos. </Typography>
+        <Typography variant="h4" className={classes.gridWrapper}> Get stock photos. </Typography>
+        { parameter !== '' ?
+          <Typography variant="h7" className={classes.gridWrapper}> Showing result of '{parameter}' </Typography>
+          : ''
+        }
         <Grid
           container
           direction="row"
