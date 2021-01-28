@@ -12,9 +12,12 @@ function App() {
   const [query, setQuery] = useState('people') // set the initial query for API
   const [parameter, setParameter] = useState('') // for searchBar
 
-  useEffect(async() => {
-    const result = await getData(query);
-    setImages(result)
+  useEffect(() => {
+    const fetchData = async() => {
+      const result = await getData(query);
+      setImages(result)
+    }
+    fetchData()
   }, [parameter])
 
   // for submit/search

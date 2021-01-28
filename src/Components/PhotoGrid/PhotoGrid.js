@@ -1,5 +1,5 @@
 import React from 'react'
-import CardPhotos from './Photo/CardPhotos'
+import Photo from './Photo/Photo'
 
 import { Typography, Grid } from '@material-ui/core'
 
@@ -24,7 +24,7 @@ const PhotoGrid = ({ images, parameter }) => {
             >
             {
                 images.map((image) => (
-                    <CardPhotos
+                    <Photo
                         image={image}
                     />
                     ))

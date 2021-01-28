@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, InputAdornment } from '@material-ui/core'
+import { Input, Typography, InputAdornment } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
 
 import makeStyles from './style.js'
@@ -23,6 +23,7 @@ const SearchBar = ({ onSubmit, onChange }) => {
               }
             />
           </form>
+          <Typography variant="h7" className={classes.suggestion}>Suggested : Nature, Light, Plants, Leaf and more.. </Typography>
       </div>
     )
 }

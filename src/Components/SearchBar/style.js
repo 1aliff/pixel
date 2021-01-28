@@ -15,5 +15,11 @@ export default makeStyles((theme) => ({
       margin: 20,
       border: '3px solid #e5e5e5',
       borderRadius: '10px',
+    },
+    suggestion: {      
+      paddingLeft: '20px',
+      paddingRight: '20px',
+      width: '100%',
+      height: '60px',
     }
   }));

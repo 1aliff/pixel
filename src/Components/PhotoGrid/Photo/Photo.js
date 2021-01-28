@@ -1,33 +1,40 @@
 import React, { useState }from 'react'
 import { Backdrop, Modal, Fade, Card, CardMedia, CardActions, Button, CardActionArea, CardContent, Typography } from '@material-ui/core'
-
 import makeStyles from './style'
+import GetAppIcon from '@material-ui/icons/GetApp';
+// import fileDownload from 'js-file-download'
+import FileSaver, { saveAs } from 'file-saver';
 
 // This component for each card control
 const CardPhotos = ({ image }) => {
     const classes = makeStyles()
     const [open, setOpen]= useState(false);
 
-    const url = image.src.large;
-    const originalPhoto = image.src.original;
+    const urlOriginalSize = image.src.original;
+    const urlLargeSize = image.src.large;
     const photographer = image.photographer;
 
-    const handleOpenModal = () => {
-        setOpen(true)
-        console.log('yo')
-    }
+    console.log('let me see it: ',image)
+    
+    const handleOpenModal = () => setOpen(true)
+    const handleCloseModal = () => setOpen(false)
 
-    const handleCloseModal = () => {
-        setOpen(false)
+    const onDownload = (url, fileName) => {
+        fetch(url, { 
+            method: 'GET',
+            responseType: 'blob',
+        }).then (res => {
+            FileSaver.saveAs(url, fileName);
+        })
     }
-
+    
     return (
         <>
             <Card className={classes.root}>
                 <CardActionArea onClick={handleOpenModal}>
                     <CardMedia
                         className={classes.media}
-                        image={url}
+                        image={urlLargeSize}
                         title={`Photo By ${photographer}`}
                     />
                     <CardContent>
@@ -57,14 +64,17 @@ const CardPhotos = ({ image }) => {
             >
                 <Fade in={open}>
                     <div className={classes.paper}>
-                        Photo By : {photographer}
-                        {/* <Card> */}
-                            <CardMedia
-                                className={classes.originalMedia}
-                                image={originalPhoto}
-                                title={`Photo By ${photographer}`}
-                            />
-                        {/* </Card> */}
+                        <div className={classes.action}>
+                            <Typography variant="h5" className={classes.photographer}>By: {photographer}</Typography>
+                            <Button variant="contained" className={classes.button} onClick={() => onDownload(urlOriginalSize, 'image.jpg')}>Download Full Size<GetAppIcon/></Button>
+                        </div>
+                        <br />
+                        <img
+                            alt="that wanaka tree"
+                            src={urlLargeSize}
+                            height="750px"
+                        />
+                        <br />
                     </div>
                 </Fade>
             </Modal>

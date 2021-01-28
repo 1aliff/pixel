@@ -21,13 +21,27 @@ export default makeStyles(theme => ({
       height: 'auto'
     },
     paper: {
-        backgroundColor: theme.palette.background.paper,
+      // height: '900px',
+      // width: '500px',
+        maxWidth: '100%',
+        maxHeight: '900px',
+        outline: 'none',
+        backgroundColor:'#fff',
         border: '0px solid #EEE',
+        borderRadius: '6px',
         boxShadow: theme.shadows[6],
-        padding: theme.spacing(2, 4, 3),
+        padding: '25px',
+        marginBottom: '1.15rem',
+        marginTop: '2.3rem',
     },
-    originalMedia : {
-      width: 1200,
-      height: 650,
-    }
+    photographer : {
+      float : 'left'
+    },
+    button: {
+      backgroundColor: '#14BA8B',
+      float: 'right',
+      margin: '10px',
+    },
+    // action: {
+    // }
   }));
