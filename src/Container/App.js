@@ -4,8 +4,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import makeStyles from './style.js'
 
-import Navbar from '../Components/Navbar/Navbar'
-import CardPhotos from '../Components/CardPhotos/CardPhotos'
+import Navbar from '../components/Navbar/Navbar'
+import CardPhotos from '../components/CardPhotos/CardPhotos'
 
 const AUTHORIZATION = process.env.REACT_APP_AUTHORIZATION;
 
