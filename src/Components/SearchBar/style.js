@@ -14,8 +14,10 @@ export default makeStyles((theme) => ({
       paddingTop: '10px'
     },
     typography: {
-      margin: 50,
-      padding: 20,
+      margin: 'auto',
+      width: '60%',
+      paddingTop: '60px',
+      paddingBottom: '60px',
       color: '#eee',
     },
     searchBar: {
