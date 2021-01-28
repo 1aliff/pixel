@@ -10,10 +10,9 @@ const SearchBar = ({ onSubmit, onChange, handleChips }) => {
     const classes = makeStyles()
 
     return (
-    <div className={classes.searchBar}>
-      <div className={classes.headerTypo}>
-        <Typography variant="h3" color="textSecondary" gutterBottom>The best free stock photos & videos shared by talented creators.</Typography>
-      </div>
+    <div className={classes.header}>
+        <Typography variant="h2" className={classes.typography} gutterBottom>The best free stock photos & videos shared by talented creators around the world.</Typography>
+      <div className={classes.searchBar}>
         <form autoComplete="off" onSubmit={onSubmit}>
             <Input
               className={classes.inputSearch}
@@ -28,7 +27,7 @@ const SearchBar = ({ onSubmit, onChange, handleChips }) => {
               }
             />
           </form>
-          <Typography variant="h7" color="textSecondary" gutterBottom>Suggestion: </Typography> {
+          <Typography variant="h7" className={classes.suggestion} gutterBottom>Suggestion: </Typography> {
             CHIPS_LABEL.map(chip => (
               <Chip 
                 label={chip}
@@ -37,6 +36,7 @@ const SearchBar = ({ onSubmit, onChange, handleChips }) => {
               />
             ))
           }
+        </div>
     </div>
     )
 }

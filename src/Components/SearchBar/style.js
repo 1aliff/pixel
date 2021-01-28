@@ -1,19 +1,36 @@
 import { makeStyles } from '@material-ui/core/styles';
+import backgroundImage from '../../Assets/header.jpg';
 
 export default makeStyles((theme) => ({
+    header: {
+      margin: '0 auto',
+      width: '100%',
+      height: '600px',
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '50% 20%', // elegant way i found to stitch this image
+      backgroundSize: 'cover', // also this, thanks stackoverflow ;)
+      objectFit: 'cover',
+      paddingTop: '10px'
+    },
+    typography: {
+      margin: 50,
+      padding: 20,
+      color: '#eee',
+    },
     searchBar: {
       margin: 'auto',
-      width: '50%',
-      // backgroundImage: "url(https://d2jv9003bew7ag.cloudfront.net/uploads/Photographer-at-work.jpg)",
-      padding: '10px'
+      width: '60%',
+      padding: 10
     },
     inputSearch: {
-      paddingLeft: '20px',
-      paddingRight: '20px',
+      paddingLeft: '20px', // for placeholder
+      paddingRight: '20px', // for placeholder
       width: '100%',
       height: '60px',
-      margin: 20,
-      border: '3px solid #e5e5e5',
+      marginBottom: 20, // between searchbox and chips
+      color: 'black',
+      background: '#eee',
       borderRadius: '10px',
     },
     suggestion: {      
@@ -21,14 +38,11 @@ export default makeStyles((theme) => ({
       paddingRight: '20px',
       width: '100%',
       height: '60px',
-    },
-    headerTypo: {
-      margin: '25px'
+      color: '#eee'
     },
     chips: {
-      // padding: '5px',
       margin: '1px',
-      backgroundColor: '#aca8a8',
+      backgroundColor: '#696969',
       color: '#fff',
     }
   }))

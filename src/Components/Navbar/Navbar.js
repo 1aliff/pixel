@@ -1,6 +1,7 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, Button} from '@material-ui/core'
 import useStyles from './style';
+import CameraRollTwoToneIcon from '@material-ui/icons/CameraRollTwoTone';
 
 const Navbar = () => {
     const classes = useStyles();
@@ -9,7 +10,7 @@ const Navbar = () => {
         <>
             <AppBar position="static">
                 <Toolbar style={{ backgroundColor: 'white' }}>
-                <Typography variant="h6" className={classes.title}> Pixels </Typography>
+                <Typography variant="h6" className={classes.title} color="textSecondary" gutterBottom> <CameraRollTwoToneIcon style={{color: 'black'}}/> | Pixels </Typography>
                 {/* <Button color="inherit">Saved Photos</Button> */}
                 </Toolbar>
             </AppBar>
