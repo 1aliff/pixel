@@ -1,15 +1,12 @@
 import React, { useState }from 'react'
-import { Paper, Backdrop, Modal, Fade, Card, CardMedia, CardActions, Button, CardActionArea, CardContent, Typography } from '@material-ui/core'
+import { Backdrop, Modal, Fade, Card, CardMedia, Button, CardActionArea, Typography } from '@material-ui/core'
+import GetAppIcon from '@material-ui/icons/GetApp'
 import makeStyles from './style'
-import GetAppIcon from '@material-ui/icons/GetApp';
-// import fileDownload from 'js-file-download'
-import FileSaver, { saveAs } from 'file-saver';
+import FileSaver from 'file-saver'
 
-// This component for each card control
 const CardPhotos = ({ image }) => {
     const classes = makeStyles()
     const [open, setOpen]= useState(false);
-    const [showInfo, setShowInfo] = useState(true);
 
     const urlOriginalSize = image.src.original;
     const urlLargeSize = image.src.large;
@@ -67,7 +64,7 @@ const CardPhotos = ({ image }) => {
                         </div>
                         <img
                             className={classes.image}
-                            alt={`Photo By: ${photographer}`}
+                            alt={`By: ${photographer}`}
                             src={urlLargeSize}
                         />
                         <br />

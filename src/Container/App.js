@@ -15,7 +15,6 @@ function App() {
     const result = await getData(query);
     setImages(result)
   }
-
   // for submit/search
   const handleSubmit = (e) => {
     e.preventDefault()
