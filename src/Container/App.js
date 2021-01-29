@@ -27,9 +27,9 @@ function App() {
     setParameter(query)    
   }
 
-  const handleChips = (value) => {
-    setParameter(value);
-  }
+  // const handleChips = (value) => {
+  //   setParameter(value);
+  // }
 
   const handleOnChange = (e) => setQuery(e.target.value)   // for onChange Input
 

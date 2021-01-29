@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     header: {
       margin: '0 auto',
       width: '100%',
-      height: '600px',
+      height: '550px',
       backgroundImage: `url(${backgroundImage})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: '50% 20%', // elegant way i found to stitch this image
@@ -15,14 +15,14 @@ export default makeStyles((theme) => ({
     },
     typography: {
       margin: 'auto',
-      width: '60%',
-      paddingTop: '60px',
-      paddingBottom: '60px',
+      width: '30%',
+      paddingTop: '150px',
+      paddingBottom: '10px',
       color: '#eee',
     },
     searchBar: {
       margin: 'auto',
-      width: '60%',
+      width: '30%',
       padding: 10
     },
     inputSearch: {

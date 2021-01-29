@@ -11,7 +11,7 @@ const SearchBar = ({ onSubmit, onChange, handleChips }) => {
 
     return (
     <div className={classes.header}>
-        <Typography variant="h2" className={classes.typography} gutterBottom>The best free stock photos & videos shared by talented creators around the world.</Typography>
+        <Typography variant="h4" className={classes.typography} gutterBottom>The best free stock photos & videos shared by talented creators around the world.</Typography>
       <div className={classes.searchBar}>
         <form autoComplete="off" onSubmit={onSubmit}>
             <Input
