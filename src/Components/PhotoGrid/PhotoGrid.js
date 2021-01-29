@@ -1,9 +1,8 @@
 import React from 'react'
-import Photo from './Photo/Photo'
-
 import { Typography, Grid } from '@material-ui/core'
-
 import makeStyles from './style'
+
+import Photo from './Photo/Photo'
 
 const PhotoGrid = ({ images, parameter }) => {
     const classes = makeStyles();
@@ -13,11 +12,10 @@ const PhotoGrid = ({ images, parameter }) => {
             <Typography variant="h5" color="textSecondary" className={classes.gridTypo} gutterBottom> Get stock photos. </Typography>
             { 
                 parameter !== ''
-                ? <Typography variant="h8" className={classes.gridTypo} gutterBottom> Displaying result of '{parameter}' </Typography>
+                ? <Typography variant="h8" color="textSecondary" className={classes.gridTypo}> Displaying result for '{parameter}'</Typography>
                 : ''
             }
             <Grid
-                // className={classes.gridWrapper}
                 container
                 direction="row"
                 justify="center"
@@ -25,10 +23,8 @@ const PhotoGrid = ({ images, parameter }) => {
             >
             {
                 images.map((image) => (
-                    <Photo
-                        image={image}
-                    />
-                    ))
+                    <Photo image={image} />
+                ))
             }
             </Grid>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Input, Chip, Typography, InputAdornment } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
-
 import makeStyles from './style.js'
 
 const CHIPS_LABEL = ['Mountain', 'Night', 'Coffee', 'Cars', 'Travel', 'Love'];
@@ -32,7 +31,7 @@ const SearchBar = ({ onSubmit, onChange, handleChips }) => {
               <Chip 
                 label={chip}
                 className={classes.chips}
-                // onClick={handleChips(chip)}
+                onClick={() => handleChips(chip)}
               />
             ))
           }

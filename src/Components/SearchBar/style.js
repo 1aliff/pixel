@@ -18,6 +18,7 @@ export default makeStyles((theme) => ({
       width: '30%',
       paddingTop: '150px',
       paddingBottom: '10px',
+      fontWeight: 'bold',
       color: '#eee',
     },
     searchBar: {
@@ -37,7 +38,7 @@ export default makeStyles((theme) => ({
     },
     suggestion: {      
       paddingLeft: '20px',
-      paddingRight: '20px',
+      paddingRight: '5px',
       width: '100%',
       height: '60px',
       color: '#eee'

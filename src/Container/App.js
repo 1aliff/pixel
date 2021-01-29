@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react'
-
-import NavBar from '../Components/Navbar/Navbar'
-import SearchBar from '../Components/SearchBar/SearchBar'
-import PhotoGrid from '../Components/PhotoGrid/PhotoGrid'
-
-import getData from '../API/index.js'
+import { NavBar, SearchBar, PhotoGrid } from '../Components/'
+import getData from '../API/'
 
 function App() {
 
@@ -24,14 +20,18 @@ function App() {
   // for submit/search
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(query === '') return alert('type something ;)')
     setParameter(query)    
   }
-
-  // const handleChips = (value) => {
-  //   setParameter(value);
-  // }
-
-  const handleOnChange = (e) => setQuery(e.target.value)   // for onChange Input
+  
+  // for onChange Input
+  const handleOnChange = (e) => setQuery(e.target.value)
+  
+  // to handle all the tag below search bar
+  const handleChips = (chipValue) => {
+    setQuery(chipValue)
+    setParameter(chipValue)
+  }
 
   return (
     <div>
@@ -39,7 +39,7 @@ function App() {
       <SearchBar 
         onSubmit={handleSubmit}
         onChange={handleOnChange}
-        // handleChips={handleChips}
+        handleChips={handleChips}
       />
       <PhotoGrid 
         images={images}
