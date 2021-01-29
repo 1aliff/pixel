@@ -3,7 +3,6 @@ import { NavBar, SearchBar, PhotoGrid } from '../Components/'
 import getData from '../API/'
 
 function App() {
-
   const [images, setImages] = useState([]) // to get images data
   const [query, setQuery] = useState('people') // set the initial query for API
   const [parameter, setParameter] = useState('') // for searchBar
